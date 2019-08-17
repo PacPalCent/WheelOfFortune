@@ -1,6 +1,7 @@
 ﻿using Common;
 using UnityEngine;
 using UnityEngine.UI;
+using WheelOfFortune.Generator;
 
 namespace Menu
 {
@@ -10,12 +11,18 @@ namespace Menu
         
         private void Start()
         {
-            _startButton.onClick.AddListener(LoadLevelSystem.LoadWheelScene);
+            _startButton.onClick.AddListener(StartButtonClick);
         }
 
         private void OnDestroy()
         {
             _startButton.onClick.RemoveAllListeners();
+        }
+
+        private void StartButtonClick()
+        {
+            LoadLevelSystem.LoadWheelScene();
+            FortuneGenerator.Generate();
         }
     }
 }

@@ -4,7 +4,8 @@ namespace WheelOfFortune.Wheel
 {
     public interface IWheel
     {
-        void Rotate();
+        void Rotate(int winIndex);
+        void RotateFinished();
         void SetValues(List<int> valueList);
     }
 }
